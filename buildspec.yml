@@ -22,10 +22,7 @@ phases:
       - aws s3 cp $ZIP_NAME s3://$S3_BUCKET/$ZIP_NAME
 
       - echo "Updating Lambda from S3..."
-      - aws lambda update-function-code \
-          --function-name $LAMBDA_NAME \
-          --s3-bucket $S3_BUCKET \
-          --s3-key $ZIP_NAME
+      - aws lambda update-function-code --function-name $LAMBDA_NAME --s3-bucket $S3_BUCKET --s3-key $ZIP_NAME
 
 artifacts:
   files:
